@@ -1,6 +1,8 @@
+import HomeProducts from '../components/HomeProducts';
+
 function Home() {
     return(
-        <h1>PRODUTOS EM BREVE</h1>
+        <HomeProducts />
     );
 };
 

@@ -17,6 +17,7 @@ function SignUp(){
 
         try {
             setLoad(true)
+            
             await axios.post(`http://localhost:5000/users/sign-up`, {
                 name,
                 email,
