@@ -12,7 +12,7 @@ function HomeProducts() {
   const { setGamePrice } = React.useContext(AuthContext);
   const { setGameName } = React.useContext(AuthContext);
   const { setGameId } = React.useContext(AuthContext);
-  const [ gameList, setGameList ] = useState([]);
+  const [gameList, setGameList] = useState([]);
 
   useEffect(() => {
     const gamesData = async () => {

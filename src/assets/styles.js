@@ -95,14 +95,6 @@ export const Header2 = styled.header`
     border-radius: 3px;
 `;
 
-export const Bag = styled.div`
-    width: 100%;
-`
-
-export const PurchaseSummary = styled.div`
-    
-`
-
 export const Title = styled.img`
     width: 500px;
     margin-top: -30px;

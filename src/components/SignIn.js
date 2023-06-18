@@ -10,6 +10,7 @@ function SignIn() {
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
     const { setToken } = React.useContext(AuthContext);
+    const { setUserId } = React.useContext(AuthContext);
     const [ load, setLoad ] = useState(false);
     const navigate = useNavigate();
 
@@ -17,13 +18,13 @@ function SignIn() {
         e.preventDefault()
         try {
             setLoad(true)
-
             await axios.post(`http://localhost:5000/users/sign-in`, {
                 email,
                 password
             })
 
             .then(res => setToken({ token: res.data.token }))
+            .then(res => setUserId({ userId: res.data.user }))
             .then(() => navigate('/home'))
 
         } catch (error) {

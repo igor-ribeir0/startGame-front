@@ -8,6 +8,10 @@ export const AuthProvider = (props) => {
         token: ''
     });
 
+    const [userId, setUserId] = useState({
+        userId: ''
+    });
+
     const [imgGame, setImgGame] = useState({
         imgGame: ''
     });
@@ -29,6 +33,7 @@ export const AuthProvider = (props) => {
             value={
                 { 
                     token, setToken, 
+                    userId, setUserId,
                     imgGame, setImgGame,
                     gamePrice, setGamePrice,
                     gameName, setGameName,
