@@ -8,6 +8,9 @@ import { Main2, Title, Button, LinkTexto, Form } from '../assets/styles';
 function SignUp(){
     const [ name, setName ] = useState('');
     const [ email, setEmail ] = useState('');
+    const [ address, setAddress ] = useState('');
+    const [ complement, setComplement ] = useState('');
+    const [ cep, setCep ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ load, setLoad ] = useState(false)
     const navigate = useNavigate();
@@ -20,6 +23,9 @@ function SignUp(){
             await axios.post(`http://localhost:5000/users/sign-up`, {
                 name,
                 email,
+                address,
+                complement,
+                cep,
                 password
             })
             .then(() => navigate('/'))
@@ -48,6 +54,30 @@ function SignUp(){
                     name="email"
                     value = {email}
                     onChange = {e => setEmail(e.target.value)}
+                />
+                <input
+                    required
+                    type="text"
+                    placeholder="Address"
+                    name="address"
+                    value = {address}
+                    onChange = {e => setAddress(e.target.value)}
+                />
+                 <input
+                    required
+                    type="text"
+                    placeholder="Complement"
+                    name="complement"
+                    value = {complement}
+                    onChange = {e => setComplement(e.target.value)}
+                />
+                 <input
+                    required
+                    type="text"
+                    placeholder="CEP"
+                    name="cep"
+                    value = {cep}
+                    onChange = {e => setCep(e.target.value)}
                 />
                 <input
                     required
